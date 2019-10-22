@@ -8,3 +8,4 @@ console.log('Hello by js');
 console.log('Hello World!');
 
 document.getElementById('app').innerHTML='<p>Hello to BootcampPizza from JavaScript!</p>';
+console.log('Dobar dan!');

@@ -12,11 +12,11 @@ console.log(app);
 
 app.innerHTML = '<p>Hello to BootcampPizza from JavaScript!</p>';
 
-const  facebook_url='https://www.facebook.com';
-const  youtube_url='https://www.youtube.com';
+const facebook_url = 'https://www.facebook.com';
+const youtube_url = 'https://www.youtube.com';
 
-var facebook_ico_path='assets/images/fb_ico.png';
-var youtube_ico_path='assets/images/yt_ico.png';
+var facebook_ico_path = 'assets/images/fb_ico.png';
+var youtube_ico_path = 'assets/images/yt_ico.png';
 
 const social = document.getElementById('social');
 social.innerHTML =
@@ -184,7 +184,7 @@ console.log(`Pizza surface is ${Math.round(pizzaSurface)} cm²`);
     //Za danasnji datum
     console.log(dateTimeNow.getDay());
 
-    let totalSeconds=hours*3600+minutes*60+seconds; 
+    let totalSeconds = hours * 3600 + minutes * 60 + seconds;
     //let totalSeconds=(hours*60+minutes)*60+seconds;
 
     console.log(`Total number of seconds today is ${totalSeconds}`);
@@ -202,9 +202,106 @@ console.log(`Pizza surface is ${Math.round(pizzaSurface)} cm²`);
 
     let dateTimeStampString = `[{${dateStampString}} - ${timeStampString}]`;
     console.log(dateTimeStampString);
-    
+}
 
+{
+    let b;
+    b = 3;
+    if (b > 3) {
+        console.log(`${b} je vece od 3`);
+    } else {
+        console.error(`${b} nije vece od 3`);
+    }
+    console.warn('Ovo je mnogo strava kod!');
+    //Napisati programcic koji proverava da li je B paran ili neparan broj.
+    if (b % 2 == 0) {
+        console.log('Paran je broj');
+    } else {
+        console.log('Neparan broj');
+    }
+}
 
+let discountDay = 2;//Tuesday
+let dateTimeNow = new Date();
+let dayInWeek = dateTimeNow.getDay();
+let capricciosa = 120;
+let discountSize = 0.1;//10%
+let pizzaCount = 5;
+let finalPrice = capricciosa * pizzaCount;
+
+if (dayInWeek === discountDay) {
+    //finalPrice=finalPrice*(1-discountSize);
+    finalPrice *= 1 - discountSize;
+}
+console.log(`Price for ${pizzaCount} pizzas is ${finalPrice}`);
+
+{
+    let hours = dateTimeNow.getHours();
+    let minutes = dateTimeNow.getMinutes();
+    let seconds = dateTimeNow.getSeconds();
+    let dayInMonth = dateTimeNow.getDate();
+    let month = dateTimeNow.getMonth();
+    let year = dateTimeNow.getFullYear();
+    let timeStampString = `${hours}:${minutes}:${seconds}`;
+    let dayInWeekString;
+    let monthString;
+    switch (dayInWeek) {
+        case 0: dayInWeekString = 'Sunday';
+            break;
+        case 1: dayInWeekString = 'Monday';
+            break;
+        case 2: dayInWeekString = 'Tuesday';
+            break;
+        case 3: dayInWeekString = 'Wednesday';
+            break;
+        case 4: dayInWeekString = 'Thursday';
+            break;
+        case 5: dayInWeekString = 'Friday';
+            break;
+        case 6: dayInWeekString = 'Saturday';
+            break;
+        default:
+            console.error(`Unknown day ${dayInWeek}`);
+            dayInWeekString = 'ERROR';
+            break;
+    }
+
+    //Napisati kod koji vraca naziv meseca uobliku stringa.
+    //Meseci pocinju od 0 tojest januar je 0
+    switch (month) {
+        case 0: monthString = "January";
+            break;
+        case 1: monthString = "February";
+            break;
+        case 2: monthString = "March";
+            break;
+        case 3: monthString = "April";
+            break;
+        case 4: monthString = "May";
+            break;
+        case 5: monthString = "June";
+            break;
+        case 6: monthString = "July";
+            break;
+        case 7: monthString = "August";
+            break;
+        case 8: monthString = "September";
+            break;
+        case 9: monthString = "October";
+            break;
+        case 10: monthString = "November";
+            break;
+        case 11: monthString = "December";
+            break
+        default:
+            console.error(`Unknown month ${month}`);
+            monthString = "ERROR";
+            break;
+    }
+
+    app.innerHTML += `<p>Today is ${dayInWeekString}, ${dayInMonth} of ${monthString} ${year}. Current Time: <span id="current-time">${timeStampString}</span></p>`
 
 }
+
+
 

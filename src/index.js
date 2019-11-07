@@ -1,3 +1,4 @@
+
 //-----------------------------------------------
 //Nedelja 1
 //Nedelja 1, Dan 1
@@ -304,4 +305,105 @@ console.log(`Price for ${pizzaCount} pizzas is ${finalPrice}`);
 }
 
 
+function helloWorld() {
+    console.log('Hello World!');
+}
 
+console.log('Pre poziva funkcije!');
+helloWorld();
+console.log('Posle poziva funkcije!');
+// let message=15;
+// console.log(message);
+
+function logMessage(message) {
+    console.log(`${message}`);
+}
+
+{
+    let poruka = 'Danas je suncan dan!';
+    logMessage(poruka);
+    logMessage('Batman!');
+    logMessage();
+
+}
+function add(a, b) {
+    let zbir = a + b;
+    return zbir;
+
+}
+
+let rezultat = add(5, 2);
+console.log(rezultat);
+//console.log(helloWorld);
+
+//Napisati funkciju koja na osnovu poslatog dana u nedelji kao broj,
+// vraca recima koji je dan u nedelji
+
+//let абв;
+//абв;
+function getDayOfWeek(dayInNumber) {
+    switch (dayInNumber) {
+        case 0: return 'Sunday';
+        case 1: return 'Monday';
+        case 2: return 'Tuesday';
+        case 3: return 'Wednesday';
+        case 4: return 'Thursday';
+        case 5: return 'Friday';
+        case 6: return 'Saturday';
+        default: return 'ERROR!';
+    }
+    
+    
+}
+function isEven(number) {
+    if (number % 2 == 0) return true;
+    else return false;
+}
+console.log(getDayOfWeek(0));//Sunday
+
+console.log(isEven(5)?'Even':'Odd');
+
+// if(isEven(5)){
+//     console.log('Even');
+// }else{
+//     console.log('Odd');
+// }
+
+function logMessageTimeStamp(message){
+    let now=new Date();
+    console.log(`${getTimeFormat(now)} ${message}`);
+
+   
+}
+function getTimeFormat(time){
+    return `[${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}]`;
+}
+
+
+logMessageTimeStamp('Pauza pls!');
+
+
+
+{
+
+    let array= new Array();
+    array.push(10);
+    console.log(array);
+    array.push('abc');
+    console.log(array);
+    array.unshift('start')
+    console.log(array);
+    array[0]='Dobar dan';
+    console.log(array);
+    let nizb=[1,2,3];
+    console.log(nizb);
+    //array.push(nizb);
+    let nizc=array.concat(nizb);
+    console.log(nizc);
+    console.log(nizc.length);
+    for(let i=0;i<nizc.length;i++){
+        logMessageTimeStamp(nizc[i]);
+    }
+    
+
+}

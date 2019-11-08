@@ -221,89 +221,89 @@ console.log(`Pizza surface is ${Math.round(pizzaSurface)} cm²`);
         console.log('Neparan broj');
     }
 }
-
-let discountDay = 2;//Tuesday
-let dateTimeNow = new Date();
-let dayInWeek = dateTimeNow.getDay();
-let capricciosa = 120;
-let discountSize = 0.1;//10%
-let pizzaCount = 5;
-let finalPrice = capricciosa * pizzaCount;
-
-if (dayInWeek === discountDay) {
-    //finalPrice=finalPrice*(1-discountSize);
-    finalPrice *= 1 - discountSize;
-}
-console.log(`Price for ${pizzaCount} pizzas is ${finalPrice}`);
-
 {
-    let hours = dateTimeNow.getHours();
-    let minutes = dateTimeNow.getMinutes();
-    let seconds = dateTimeNow.getSeconds();
-    let dayInMonth = dateTimeNow.getDate();
-    let month = dateTimeNow.getMonth();
-    let year = dateTimeNow.getFullYear();
-    let timeStampString = `${hours}:${minutes}:${seconds}`;
-    let dayInWeekString;
-    let monthString;
-    switch (dayInWeek) {
-        case 0: dayInWeekString = 'Sunday';
-            break;
-        case 1: dayInWeekString = 'Monday';
-            break;
-        case 2: dayInWeekString = 'Tuesday';
-            break;
-        case 3: dayInWeekString = 'Wednesday';
-            break;
-        case 4: dayInWeekString = 'Thursday';
-            break;
-        case 5: dayInWeekString = 'Friday';
-            break;
-        case 6: dayInWeekString = 'Saturday';
-            break;
-        default:
-            console.error(`Unknown day ${dayInWeek}`);
-            dayInWeekString = 'ERROR';
-            break;
+    let discountDay = 2;//Tuesday
+    let dateTimeNow = new Date();
+    let dayInWeek = dateTimeNow.getDay();
+    let capricciosa = 120;
+    let discountSize = 0.1;//10%
+    let pizzaCount = 5;
+    let finalPrice = capricciosa * pizzaCount;
+
+    if (dayInWeek === discountDay) {
+        //finalPrice=finalPrice*(1-discountSize);
+        finalPrice *= 1 - discountSize;
     }
+    console.log(`Price for ${pizzaCount} pizzas is ${finalPrice}`);
 
-    //Napisati kod koji vraca naziv meseca uobliku stringa.
-    //Meseci pocinju od 0 tojest januar je 0
-    switch (month) {
-        case 0: monthString = "January";
-            break;
-        case 1: monthString = "February";
-            break;
-        case 2: monthString = "March";
-            break;
-        case 3: monthString = "April";
-            break;
-        case 4: monthString = "May";
-            break;
-        case 5: monthString = "June";
-            break;
-        case 6: monthString = "July";
-            break;
-        case 7: monthString = "August";
-            break;
-        case 8: monthString = "September";
-            break;
-        case 9: monthString = "October";
-            break;
-        case 10: monthString = "November";
-            break;
-        case 11: monthString = "December";
-            break
-        default:
-            console.error(`Unknown month ${month}`);
-            monthString = "ERROR";
-            break;
+    {
+        let hours = dateTimeNow.getHours();
+        let minutes = dateTimeNow.getMinutes();
+        let seconds = dateTimeNow.getSeconds();
+        let dayInMonth = dateTimeNow.getDate();
+        let month = dateTimeNow.getMonth();
+        let year = dateTimeNow.getFullYear();
+        let timeStampString = `${hours}:${minutes}:${seconds}`;
+        let dayInWeekString;
+        let monthString;
+        switch (dayInWeek) {
+            case 0: dayInWeekString = 'Sunday';
+                break;
+            case 1: dayInWeekString = 'Monday';
+                break;
+            case 2: dayInWeekString = 'Tuesday';
+                break;
+            case 3: dayInWeekString = 'Wednesday';
+                break;
+            case 4: dayInWeekString = 'Thursday';
+                break;
+            case 5: dayInWeekString = 'Friday';
+                break;
+            case 6: dayInWeekString = 'Saturday';
+                break;
+            default:
+                console.error(`Unknown day ${dayInWeek}`);
+                dayInWeekString = 'ERROR';
+                break;
+        }
+
+        //Napisati kod koji vraca naziv meseca uobliku stringa.
+        //Meseci pocinju od 0 tojest januar je 0
+        switch (month) {
+            case 0: monthString = "January";
+                break;
+            case 1: monthString = "February";
+                break;
+            case 2: monthString = "March";
+                break;
+            case 3: monthString = "April";
+                break;
+            case 4: monthString = "May";
+                break;
+            case 5: monthString = "June";
+                break;
+            case 6: monthString = "July";
+                break;
+            case 7: monthString = "August";
+                break;
+            case 8: monthString = "September";
+                break;
+            case 9: monthString = "October";
+                break;
+            case 10: monthString = "November";
+                break;
+            case 11: monthString = "December";
+                break
+            default:
+                console.error(`Unknown month ${month}`);
+                monthString = "ERROR";
+                break;
+        }
+
+        app.innerHTML += `<p>Today is ${dayInWeekString}, ${dayInMonth} of ${monthString} ${year}. Current Time: <span id="current-time">${timeStampString}</span></p>`
+
     }
-
-    app.innerHTML += `<p>Today is ${dayInWeekString}, ${dayInMonth} of ${monthString} ${year}. Current Time: <span id="current-time">${timeStampString}</span></p>`
-
 }
-
 
 function helloWorld() {
     console.log('Hello World!');
@@ -352,8 +352,8 @@ function getDayOfWeek(dayInNumber) {
         case 6: return 'Saturday';
         default: return 'ERROR!';
     }
-    
-    
+
+
 }
 function isEven(number) {
     if (number % 2 == 0) return true;
@@ -361,7 +361,7 @@ function isEven(number) {
 }
 console.log(getDayOfWeek(0));//Sunday
 
-console.log(isEven(5)?'Even':'Odd');
+console.log(isEven(5) ? 'Even' : 'Odd');
 
 // if(isEven(5)){
 //     console.log('Even');
@@ -369,41 +369,97 @@ console.log(isEven(5)?'Even':'Odd');
 //     console.log('Odd');
 // }
 
-function logMessageTimeStamp(message){
-    let now=new Date();
+function logMessageTimeStamp(message) {
+    let now = new Date();
     console.log(`${getTimeFormat(now)} ${message}`);
-
-   
 }
-function getTimeFormat(time){
+function getTimeFormat(time) {
     return `[${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}]`;
 }
-
-
 logMessageTimeStamp('Pauza pls!');
-
-
-
 {
 
-    let array= new Array();
+    let array = new Array();
     array.push(10);
     console.log(array);
     array.push('abc');
     console.log(array);
     array.unshift('start')
     console.log(array);
-    array[0]='Dobar dan';
+    array[0] = 'Dobar dan';
     console.log(array);
-    let nizb=[1,2,3];
+    let nizb = [1, 2, 3];
     console.log(nizb);
     //array.push(nizb);
-    let nizc=array.concat(nizb);
+    let nizc = array.concat(nizb);
     console.log(nizc);
     console.log(nizc.length);
-    for(let i=0;i<nizc.length;i++){
+    for (let i = 0; i < nizc.length; i++) {
         logMessageTimeStamp(nizc[i]);
     }
-    
+}
 
+const orderBtnClassName = '.order-btn';
+//const orderButtons = document.getElementsByClassName(orderBtnClassName);
+const orderButtons = document.querySelectorAll(orderBtnClassName);
+console.log(orderButtons);
+// for(let button in orderButtons){
+//     console.log(button);
+// }//NE
+const cart = document.querySelector('#cart');
+
+const cartPop = document.querySelector('#cart-pop');
+const pizzaCounterBadge = document.querySelector('#counter');
+cartPop.style.display = 'none';
+let isCartVisible = false;
+var pizzaCount = 0;
+
+
+function changeCartPopDisplay() {
+    //cartPop.style.display=isCartVisible?'none':'block';
+    if (isCartVisible) {
+        cartPop.style.display = 'none';
+        //cart.style.color='#FFFFFF';
+    } else {
+        cartPop.style.display = 'block';
+
+        //cart.style.color='#ffff00';
+    }
+    isCartVisible = !isCartVisible;
+
+}
+
+ cart.addEventListener('click', changeCartPopDisplay);
+
+
+// let nesto=document.querySelector('#abc');
+// let podatak=nesto.getAttribute('value');
+// console.log(podatak)
+
+// let object = document.querySelector('#abc');
+// object.addEventListener('change', function () {
+//      changeMe(object);
+//      });
+
+// function changeMe(element) {
+//     let paragraph = document.querySelector('#par');
+//     paragraph.innerHTML = element.getAttribute('value');
+// }
+
+/*for (let button of orderButtons) {
+    button.addEventListener('click', function () {
+        selectPizza(button);
+    });
+}*/
+
+orderButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        selectPizza(button);
+    });
+});
+//Zapamtiti
+function selectPizza(element) {
+    console.log(element);
+    pizzaCount++;
+    pizzaCounterBadge.innerHTML = pizzaCount;
 }

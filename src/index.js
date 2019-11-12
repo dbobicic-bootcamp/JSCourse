@@ -429,7 +429,7 @@ function changeCartPopDisplay() {
 
 }
 
- cart.addEventListener('click', changeCartPopDisplay);
+cart.addEventListener('click', changeCartPopDisplay);
 
 
 // let nesto=document.querySelector('#abc');
@@ -462,4 +462,91 @@ function selectPizza(element) {
     console.log(element);
     pizzaCount++;
     pizzaCounterBadge.innerHTML = pizzaCount;
+}
+//Objekti
+{
+    let osoba =
+    {
+        name: 'Mirko',
+        age: 18,
+        money: 175,
+        nicknames: ['Micko', 'Mire', 'Miki']
+    }
+    let osobe = [
+        {
+            name: 'Jovan',
+            age: 17,
+            money: 165,
+            nicknames: []
+        },
+        {
+            name: 'Sima',
+            age: 19,
+            money: 200
+        },
+        osoba
+    ]
+    console.log(osoba);
+    console.log(osobe);
+    let persona = {
+        name: 'Milos',
+        surname: 'Marko'
+    }
+    console.log(persona.name);
+    persona.name = 'Marko';
+
+    console.log(`Zovem se ${persona.name} ${persona.surname}`);
+    osobe.forEach(element => {
+        if (element.age >= 18) {
+            console.log(element);
+        }
+    })
+    persona.age = 20;
+    console.log(persona);
+    function getNameSurname(osoba) {
+        return `${osoba.name} ${osoba.surname}`;
+    }
+    console.log(getNameSurname(persona));
+    //OBject.keys(objekat) //Vraca niz KEY-ova objekta
+
+    //Napraviti objekat koji opisuje jednu stavku porudzbine:
+    //Potrebno je da sadrzi idPizze, Naziv, velicinu, kolicinu i cenu jednog komada
+    //Potrebno je nakon toga napisati funkciju koja za poslatu picu vraca 
+    //podatak o ukupnoj ceni stavke porudzbine.
+    //i tu vrednost dodaje u objekat stavke porudzbine
+    let stavka = {
+        id: 1,
+        name: 'Capricossa',
+        size: 32,
+        count: 5,
+        unitPrice: 400
+    }
+    let discountDay = 2;
+    let discount = 0.1;
+    let dayToday = new Date();
+
+    function getTotalPrice(stavka) {
+        if (dayToday.getDay() == discountDay) {
+            return stavka.count * stavka.unitPrice * (1 - discount);
+        } else {
+            return stavka.count * stavka.unitPrice;
+        }
+    }
+    stavka.ukupnaCena = getTotalPrice(stavka);
+    console.log(stavka.ukupnaCena);
+
+
+    stavka.izracunajUkupnuCenu= function(){
+        return this.unitPrice*this.count;
+    }
+    console.log(stavka.izracunajUkupnuCenu());
+
+    console.log(osoba);
+    let osobaString=JSON.stringify(osoba);
+    console.log(osobaString);
+
+    let poruka='{"naslov":"Dobar dan","telo":"Telo vreteno!"}';
+    console.log(poruka);
+    let porukaObjekat=JSON.parse(poruka);
+    console.log(porukaObjekat);
 }
